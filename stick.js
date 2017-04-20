@@ -3,7 +3,7 @@ name:'Testmod',
 author:'Tabernet',
 desc:'A simple example mod that adds a means of converting logs into sticks',
 engineVersion:1,
-manifest:'modManifest.js',
+manifest:'stick.js',
 requires:['Default dataset*'],
 func:function()
 {
