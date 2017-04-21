@@ -12,7 +12,7 @@ func:function()
 		//new technology which alows Water Purification:
 	new G.Tech({
 		name:'water purification',
-		desc:'@[muddy water] can now be filtered in to [water] with [coal] and crushed [stones]s//Water once deadly can now be safely consumed',
+		desc:'@[muddy water] can now be filtered in to [water] with [coal] and crushed [stone]s//Water once deadly can now be safely consumed',
 		icon:[25,3],
 		cost:{'insight':30},
 		req:{'city planning':true},
@@ -33,9 +33,9 @@ func:function()
 	});
 
 		//adding a new mode to carpenter workshop 
-	G.getDict('carpenter workshop').modes['sticks']={name:'Split logs into sticks',icon:[0,6],desc:'Turn 1 [lumber] into 5 [stick]s.',use:{'stone tools':1}};
+	G.getDict('carpenter workshop').modes['sticks']={name:'Split logs into sticks',icon:[0,6],desc:'Turn 1 [log] into 5 [stick]s.',use:{'stone tools':1}};
 			//adding a new effect to carpenter workshop 
-	G.getDict('carpenter workshop').effects.push({type:'convert',from:{'lumber':1},into:{'stick':5},every:3,mode:'sticks'});
+	G.getDict('carpenter workshop').effects.push({type:'convert',from:{'log':1},into:{'stick':5},every:3,mode:'sticks'});
 	
 
 	
