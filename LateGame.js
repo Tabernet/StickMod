@@ -12,7 +12,7 @@ func:function()
 		//new technology which alows Water Purification:
 	new G.Tech({
 		name:'water purification',
-		desc:'@Convert 500 [muddy water] can now be filtered in to [water] with [coal] and crushed [stone]s//Water once deadly can now be safely consumed',
+		desc:'@Convert 750 [muddy water] can now be filtered in to [water] with [coal] and crushed [stone]s//Water once deadly can now be safely consumed',
 		icon:[25,3],
 		cost:{'insight':30},
 		req:{'city planning':true},
@@ -20,12 +20,12 @@ func:function()
 //new Water Purification Unit:
 		new G.Unit({
 		name:'Water Purification System',
-		desc:'@Turns 500 [muddy water] into [water], using 10 [coal] and 50 [stone]',
+		desc:'@Turns 750 [muddy water] into [water], using 10 [coal] and 50 [stone]',
 		icon:[22,7],
 		cost:{'basic building materials':1000,'soft metal ingot':20},
 		use:{'land':1},
 		effects:[
-			{type:'convert',from:{'stone':50,'muddy water':500,'coal':10},into:{'water':100},every:30}
+			{type:'convert',from:{'stone':50,'muddy water':750,'coal':10},into:{'water':100},every:10}
 		],
 		category:'production',
 		req:{'water purification':true},
