@@ -7,7 +7,7 @@ manifest:'LateGame.js',
 requires:['Default dataset*'],
 func:function()
 {
-	//The idea in this simple mod is to add a means of converting logs into sticks 
+	//The idea in this simple mod is to add a means of adding use to items that otherwise just fill storage
 	//Based on Orteil's 'Example mod' 
 		//new technology which alows Water Purification:
 	new G.Tech({
