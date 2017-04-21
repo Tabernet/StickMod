@@ -16,6 +16,7 @@ func:function()
 		icon:[25,3],
 		cost:{'insight':30},
 		req:{'city planning':true},
+		});
 //new Water Purification Unit:
 		new G.Unit({
 		name:'Water Purification System',
