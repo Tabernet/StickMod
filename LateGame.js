@@ -62,7 +62,8 @@ func:function()
 		],
 		category:'production',
 		req:{'compost':true},
-		
+		});
+	
 		//Water Purification Unit - To get rid of surplus Muddy Water
 		new G.Unit({
 		name:'Water Purification System',
