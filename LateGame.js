@@ -1,83 +1,62 @@
 G.AddData({
-name:'LateGameAddons',
-author:'Tabernet',
-desc:'An Econ mod that adds a later game uses to heavily stockpiled resources',
+name:'Example mod',
+author:'Orteil',
+desc:'A simple example mod that adds hot peppers and hot sauce.',
 engineVersion:1,
-manifest:'LateGame.js',
+manifest:'modManifest.js',
 requires:['Default dataset*'],
-sheets:{'LateGameSheet':'http://i.imgur.com/tVEk1RC.png'},
+sheets:{'spicySheet':'img/spicyModIconSheet.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function()
 {
-	//The idea in this simple mod is to add a means of adding use to items that otherwise just fill storage
-	//Based on Orteil's 'Example mod' 
-		//new technology which alows Water Purification:
+	//The idea in this simple example mod is to add a few elements focused around hot sauce, because hot sauce is great and I use that stuff everywhere.
+	
+	//First we create a couple new resources :
+	new G.Res({
+		name:'hot pepper',
+		desc:'[hot pepper]s are loaded with capsaicin and, depending on who you ask, may produce a pleasant burn when eaten.',
+		icon:[0,0,'spicySheet'],
+		turnToByContext:{'eat':{'health':0.01,'happiness':0.03},'decay':{'spoiled food':0.5}},//this basically translates to : "when eaten, generate some health and happiness; when rotting, turn into either nothing or some spoiled food"
+		partOf:'food',
+		category:'food',
+	});
+	new G.Res({
+		name:'hot sauce',
+		desc:'Made from [herb]s and the [hot pepper,Spiciest peppers], this [hot sauce] stays fresh for a while and will leave anyone panting and asking for more.',
+		icon:[1,0,'spicySheet'],
+		turnToByContext:{'eat':{'health':0.03,'happiness':0.1},'decay':{'hot sauce':0.95,'spoiled food':0.05}},//that last part makes hot sauce effectively have a 95% chance of simply not rotting (in effect, it decays into itself)
+		partOf:'food',
+		category:'food',
+	});
+	
+	//Then we augment the base data to incorporate our new resources :
+		//adding hot pepper as something that can be gathered from grass
+	G.getDict('grass').res['gather']['hot pepper']=3;
+		//adding a new mode to artisans so they can make hot sauce from hot peppers
+	G.getDict('artisan').modes['hot sauce']={name:'Make hot sauce',desc:'Turn 3 [hot pepper]s and 3 [herb]s into 1 [hot sauce].',req:{'hot sauce preparing':true},use:{'knapped tools':1}};
+		//adding a new effect to artisans that handles the actual hot sauce preparing and is only active when the unit has the mode "hot sauce"
+	G.getDict('artisan').effects.push({type:'convert',from:{'hot pepper':3,'herb':3},into:{'hot sauce':1},every:3,mode:'hot sauce'});
+	
+	//Then we add a new technology which is required by the artisans to gain access to the "hot sauce" mode :
 	new G.Tech({
-		name:'water purification',
-		desc:'@[muddy water] can now be filtered in to [water] with [coal] and crushed [stone]s//Water once deadly can now be safely consumed',
-		icon:[25,3],
-		cost:{'insight':30},
-		req:{'city planning':true},
-		});
-//new Water Purification Unit:
-		new G.Unit({
-		name:'Water Purification System',
-		desc:'@Turns 250 [muddy water] into [water], using 50 [coal] and 50 [stone]',
-		icon:[22,7],
-		cost:{'basic building materials':1000,'soft metal ingot':20},
-		use:{'land':1},
-		effects:[
-			{type:'convert',from:{'stone':50,'muddy water':100,'coal':50},into:{'water':100},every:10}
-		],
-		category:'production',
-		req:{'water purification':true},
-		
-	});
-
-		//adding a new mode to carpenter workshop 
-	G.getDict('carpenter workshop').modes['sticks']={name:'Split logs into sticks',icon:[0,6],desc:'Turn 1 [log] into 5 [stick]s.',use:{'stone tools':1}};
-			//adding a new effect to carpenter workshop 
-	G.getDict('carpenter workshop').effects.push({type:'convert',from:{'log':1},into:{'stick':5},every:3,mode:'sticks'});
-	
-	new G.Unit({
-		name:'Appartment',
-		desc:'@provides 50 [housing]<>A towering edifice of humanity .',
-		icon:[0,0,'LateGameSheet'],
-		cost:{'basic building materials':250,'cut stone':500 },
-		use:{'land':1},
-		//require:{'worker':3,'metal tools':3},
-		effects:[
-			{type:'provide',what:{'housing':50}},
-			{type:'waste',chance:0.01/1000}
-		],
-		req:{'city planning':true},
-		category:'housing',
+		name:'hot sauce preparing',
+		desc:'@[artisan]s can now produce [hot sauce] from [hot pepper]s and [herb]s//This special recipe allows a skilled craftsman to fully express the complex aromas present in hot peppers.',
+		icon:[0,1,'spicySheet'],
+		cost:{'insight':10},
+		req:{'cooking':true},
 	});
 	
-	new G.Unit({
-		name:'Mass Grave',
-		desc:'@provides 100 [burial spot], in which the [corpse,dead] are automatically interred one by one@graves with buried corpses decay over time, freeing up land for more graves<>A simple grave dug into the earth, where the dead may find rest.//Burying your dead helps prevent [health,disease] and makes your people slightly [happiness,happier].',
-		icon:[1,0,'LateGameSheet'],
-		cost:{},
-		use:{'land':1},
-		//require:{'worker':1,'stone tools':1},
+	//Finally, we add a trait that amplifies the benefits of consuming hot sauce; it will take on average 20 years to appear once the conditions (knowing the "Hot sauce preparing" tech) is fulfilled.
+	new G.Trait({
+		name:'hot sauce madness',
+		desc:'@your people appreciate [hot sauce] twice as much and will be twice as happy from consuming it.',
+		icon:[1,1,'spicySheet'],
+		chance:20,
+		req:{'hot sauce preparing':true},
 		effects:[
-			{type:'provide',what:{'burial spot':100}},
-			//{type:'waste',chance:1/100,desired:true},
-			{type:'function',func:function(me){
-				var buried=G.getRes('burial spot').used;
-				if (buried>0 && G.getRes('burial spot').amount>=buried)
-				{
-					var toDie=Math.min(me.amount,randomFloor(buried*0.001));
-					me.targetAmount-=toDie;
-					G.wasteUnit(me,toDie);
-					G.getRes('burial spot').amount-=toDie;
-					G.getRes('burial spot').used-=toDie;
-				}
-			}}
+			{type:'function',func:function(){G.getDict('hot sauce').turnToByContext['eat']['happiness']=0.2;}},//this is a custom function executed when we gain the trait
 		],
-		req:{'burial':true,'city planning':true},
-		category:'civil',
 	});
 	
+	//There are many other ways of adding and changing content; refer to /data.js, the default dataset, if you want to see how everything is done in the base game. Good luck!
 }
 });
