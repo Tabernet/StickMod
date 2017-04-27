@@ -5,7 +5,7 @@ desc:'An Econ mod that adds a later game uses to heavily stockpiled resources',
 engineVersion:1,
 manifest:'LateGame.js',
 requires:['Default dataset*'],
-sheets:{'LateGameSheet':'https://raw.githubusercontent.com/Tabernet/StickMod/master/Lategame.png'},
+sheets:{'LateGameSheet':'http://imgur.com/a/hU3bh'},
 func:function()
 {
 	//The idea in this mod is to add a means of adding use to items that otherwise just fill storage
@@ -54,7 +54,7 @@ func:function()
 		new G.Unit({
 		name:'Compost Pile',
 		desc:'@Turns [spoiled food] and [muddy water] into compost by way of [bugs]',
-		icon:[22,4],
+		icon:[10,1],
 		cost:{'archaic building materials':500,'bugs':50,'mud':50},
 		use:{'land':1},
 		effects:[
