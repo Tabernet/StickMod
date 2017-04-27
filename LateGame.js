@@ -19,7 +19,7 @@ func:function()
 		name:'compost',
 		desc:'What once was waste now gives way to new life',
 		icon:[0,1,'LateGameSheet'],
-		turnToByContext:'decay':{'compost':0.95,'mud':0.05}}
+		turnToByContext:'decay':{'compost':0.95,'mud':0.05}
 		partOf:'misc materials',
 		category:'build',
 		
@@ -63,7 +63,6 @@ func:function()
 		category:'production',
 		req:{'compost':true},
 		});
-	
 		//Water Purification Unit - To get rid of surplus Muddy Water
 		new G.Unit({
 		name:'Water Purification System',
