@@ -57,7 +57,7 @@ func:function()
 		cost:{'archaic building materials':500,'bugs':50,'mud':50},
 		use:{'land':1},
 		effects:[
-			{type:'convert',from:{'spoiled food':50,'muddy water':10,'bugs':50},into:{'Compost':1},every:15}
+			{type:'convert',from:{'spoiled food':50,'muddy water':10,'bugs':50},into:{'compost':1},every:15}
 		],
 		category:'production',
 		req:{'Composting':true},
