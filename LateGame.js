@@ -61,7 +61,7 @@ func:function()
 			{type:'convert',from:{'spoiled food':50,'muddy water':10,'bugs':50},into:{'Compost':1},every:15}
 		],
 		category:'production',
-		req:{'compost':true},
+		req:{'Composting':true},
 		});
 		//Water Purification Unit - To get rid of surplus Muddy Water
 		new G.Unit({
