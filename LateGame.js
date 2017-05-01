@@ -149,7 +149,6 @@ func:function()
 	G.getDict('firekeeper').effects.push({type:'convert',from:{'corpse':10,'fire pit':0.01},into:{'corpse':1},every:3,mode:'cremate'});
 	
 	
-	{type:'convert',from:{'seafood':1,'fire pit':0.01},into:{'cooked seafood':1},every:1,repeat:5,mode:'cook'}
-	
+		
 }
 });
