@@ -46,6 +46,16 @@ func:function()
 		req:{'stockpiling':true},
 		});
 		
+		
+		//Tech for Cremation
+		new G.Tech({
+		name:'Cremation',
+		desc:'Alternative to normal burial arrangments',
+		icon:[0,3,'LateGameSheet'],
+		cost:{'insight':15},
+		req:{'cooking':true,'burial':true},
+		});
+		
 		//
 		// New Units 
 		// 
@@ -118,6 +128,10 @@ func:function()
 		],
 		req:{'burial':true,'city planning':true},
 		category:'civil',
+		
+		
+		
+		
 	});
 		
 		//
@@ -128,6 +142,14 @@ func:function()
 	G.getDict('carpenter workshop').modes['sticks']={name:'Split logs into sticks',icon:[0,6],desc:'Turn 1 [log] into 5 [stick]s.',use:{'stone tools':1}};
 			//adding a new effect to carpenter workshop 
 	G.getDict('carpenter workshop').effects.push({type:'convert',from:{'log':1},into:{'stick':5},every:3,mode:'sticks'});
+	
+		//adding a new effect to firekeepers to allow for cremation
+	G.getDict('firekeeper').modes['cremate']={name:'cremate',icon:[13,2],desc:'Flames consumes the dead',req:{'Cremation':true},use:{'stone tools':1}};
+		//adding the new effect to ave it work
+	G.getDict('firekeeper').effects.push({type:'convert',from:{'corpse':10,'fire pit':0.01},into:{'corpse':1},every:3,mode:'cremate'});
+	
+	
+	{type:'convert',from:{'seafood':1,'fire pit':0.01},into:{'cooked seafood':1},every:1,repeat:5,mode:'cook'}
 	
 }
 });
