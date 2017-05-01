@@ -51,7 +51,7 @@ func:function()
 		new G.Tech({
 		name:'Cremation',
 		desc:'Alternative to normal burial arrangments',
-		icon:[0,3,'LateGameSheet'],
+		icon:[0,2,'LateGameSheet'],
 		cost:{'insight':15},
 		req:{'burial':true},
 		});
