@@ -5,7 +5,7 @@ desc:'An Econ mod that adds a later game uses to heavily stockpiled resources',
 engineVersion:1,
 manifest:'LateGame.js',
 requires:['Default dataset*'],
-sheets:{'LateGameSheet':'https://raw.githubusercontent.com/Tabernet/StickMod/master/Lategame.png'},
+sheets:{'LateGameSheet':'http://i.imgur.com/77Dpe5g.png'},
 func:function()
 {
 	//The idea in this mod is to add a means of adding use to items that otherwise just fill storage
