@@ -53,7 +53,7 @@ func:function()
 		desc:'Alternative to normal burial arrangments',
 		icon:[0,3,'LateGameSheet'],
 		cost:{'insight':15},
-		req:{'cooking':true,'burial':true},
+		req:{'burial':true},
 		});
 		
 		//
