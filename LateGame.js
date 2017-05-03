@@ -24,6 +24,16 @@ func:function()
 		
 	});
 	
+	
+		new G.Res({
+		name:'urn',
+		desc:'Ashes to ashes, Dust to dust',
+		icon:[1,1,'LateGameSheet'],
+		partOf:'misc materials',
+		category:'misc',
+		
+	});
+	
 		//
 		// New Technology 
 		// 
@@ -62,7 +72,7 @@ func:function()
 		//Compost Pile - create compost from other wastes
 		new G.Unit({
 		name:'Compost Pile',
-		desc:'@Turns [spoiled food] and [muddy water] into compost by way of [bugs]',
+		desc:'@Turns [spoiled food] and [muddy water] into [compost] by way of [bugs]',
 		icon:[10,1],
 		cost:{'archaic building materials':500,'bugs':50,'mud':50},
 		use:{'land':1},
@@ -144,9 +154,9 @@ func:function()
 	G.getDict('carpenter workshop').effects.push({type:'convert',from:{'log':1},into:{'stick':5},every:3,mode:'sticks'});
 	
 		//adding a new effect to firekeepers to allow for cremation
-	G.getDict('firekeeper').modes['cremate']={name:'cremate',icon:[13,2],desc:'Flames consumes the dead',req:{'Cremation':true},use:{'stone tools':1}};
+	G.getDict('firekeeper').modes['cremate']={name:'Cremate',icon:[13,2],desc:'Flames consumes the dead',req:{'Cremation':true},use:{'stone tools':1}};
 		//adding the new effect to ave it work
-	G.getDict('firekeeper').effects.push({type:'convert',from:{'corpse':10,'fire pit':0.01},into:{'corpse':1},every:3,mode:'cremate'});
+	G.getDict('firekeeper').effects.push({type:'convert',from:{'corpse':1,'fire pit':0.01,'pot':1},into:{'urn':1},every:3,mode:'cremate'});
 	
 	
 		
