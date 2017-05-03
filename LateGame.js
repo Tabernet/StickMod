@@ -28,7 +28,7 @@ func:function()
 		new G.Res({
 		name:'urn',
 		desc:'Ashes to ashes, Dust to dust',
-		icon:[1,1,'LateGameSheet'],
+		icon:[2,1,'LateGameSheet'],
 		partOf:'misc materials',
 		category:'misc',
 		
@@ -90,7 +90,7 @@ func:function()
 		cost:{'basic building materials':1000,'soft metal ingot':20},
 		use:{'land':1},
 		effects:[
-			{type:'convert',from:{'stone':50,'muddy water':250,'coal':50},into:{'water':150},every:10}
+			{type:'convert',from:{'stone':50,'muddy water':250,'coal':50},into:{'water':150},every:5}
 		],
 		category:'production',
 		req:{'water purification':true},
@@ -113,6 +113,9 @@ func:function()
 		req:{'city planning':true},
 		category:'housing',
 	});
+		//Farm - Improved Burial Unit
+	
+	
 		//Mass Grave - Improved Burial Unit
 	new G.Unit({
 		name:'Mass Grave',
