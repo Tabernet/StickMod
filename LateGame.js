@@ -154,9 +154,9 @@ func:function()
 	G.getDict('carpenter workshop').effects.push({type:'convert',from:{'log':1},into:{'stick':5},every:3,mode:'sticks'});
 	
 		//adding a new effect to firekeepers to allow for cremation
-	G.getDict('firekeeper').modes['cremate']={name:'Cremate',icon:[13,2],desc:'Flames consumes the dead',req:{'Cremation':true},use:{'stone tools':1}};
+	G.getDict('firekeeper').modes['cremate']={name:'Cremate',icon:[13,2],desc:'The [corpse,dead] are enturned in simple [urn]s',req:{'Cremation':true},use:{'stone tools':1}};
 		//adding the new effect to ave it work
-	G.getDict('firekeeper').effects.push({type:'convert',from:{'corpse':1,'fire pit':0.01,'pot':1},into:{'urn':1},every:3,mode:'cremate'});
+	G.getDict('firekeeper').effects.push({type:'convert',from:{'corpse':1,'fire pit':0.01,'pot':1},into:{'urn':1},every:1,mode:'cremate'});
 	
 	
 		
