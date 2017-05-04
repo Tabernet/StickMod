@@ -85,12 +85,12 @@ func:function()
 		//Water Purification Unit - To get rid of surplus Muddy Water
 		new G.Unit({
 		name:'Water Purification System',
-		desc:'@Turns 250 [muddy water] into [water], using 50 [coal] and 50 [stone]',
+		desc:'@Turns 500 [muddy water] into [water], using 50 [coal] and 50 [stone]',
 		icon:[22,7],
 		cost:{'basic building materials':1000,'soft metal ingot':20},
 		use:{'land':1},
 		effects:[
-			{type:'convert',from:{'stone':50,'muddy water':250,'coal':50},into:{'water':150},every:5}
+			{type:'convert',from:{'stone':50,'muddy water':500,'coal':50},into:{'water':400},every:5}
 		],
 		category:'production',
 		req:{'water purification':true},
