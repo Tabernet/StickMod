@@ -90,7 +90,7 @@ func:function()
 		cost:{'basic building materials':1000,'soft metal ingot':20},
 		use:{'land':1},
 		effects:[
-			{type:'convert',from:{'stone':50,'muddy water':500,'coal':50},into:{'water':400},every:5}
+			{type:'convert',from:{'stone':50,'muddy water':500,'coal':50},into:{'water':400},every:2}
 		],
 		category:'production',
 		req:{'water purification':true},
