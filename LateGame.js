@@ -124,9 +124,9 @@ func:function()
 	
 	//Orbital Housing Complex - Balance Breaking Housing Unit
 	new G.Unit({
-		name:'Appartment2',
+		name:'Orbital Complex',
 		desc:'@provides 500 [housing]<>A towering edifice of humanity .',
-		icon:[0,0,'LateGameSheet'],
+		icon:[0,3,'LateGameSheet'],
 		cost:{'basic building materials':250,'cut stone':500 },
 		use:{'land':1},
 		//require:{'worker':3,'metal tools':3},
