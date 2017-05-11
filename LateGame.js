@@ -134,7 +134,7 @@ func:function()
 			{type:'provide',what:{'housing':500}},
 			{type:'waste',chance:0.01/1000}
 		],
-		req:{'city planning':true},
+		req:{'Space Flight':true},
 		category:'housing',
 	});
 		//Farm - Improved Burial Unit
