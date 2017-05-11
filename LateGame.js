@@ -125,16 +125,16 @@ func:function()
 	//Orbital Housing Complex - Balance Breaking Housing Unit
 	new G.Unit({
 		name:'Appartment2',
-		'@provides 50 [housing]<>A towering edifice of humanity .',
-		icon:[3,0,'LateGameSheet'],
-		cost:{'Archaic building materials':250,'cut stone':500 },
-		//require:{'worker':3,'metal tools':3},
+		desc:'@provides 500 [housing]<>A towering edifice of humanity .',
+		icon:[0,0,'LateGameSheet'],
+		cost:{'basic building materials':250,'cut stone':500 },
 		use:{'land':1},
+		//require:{'worker':3,'metal tools':3},
 		effects:[
 			{type:'provide',what:{'housing':500}},
 			{type:'waste',chance:0.01/1000}
 		],
-		req:{'Space Flight':true},
+		req:{'city planning':true},
 		category:'housing',
 	});
 		//Farm - Improved Burial Unit
