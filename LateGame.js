@@ -125,9 +125,9 @@ func:function()
 	//Orbital Housing Complex - Balance Breaking Housing Unit
 	new G.Unit({
 		name:'Orbital Housing Complex',
-		desc:'@provides 500 [housing]<> A pile of rocks reaching to the heavens leads to living high.',
+		desc:'@provides 500 [housing]<> A pile of rocks grows to new heights',
 		icon:[3,0,'LateGameSheet'],
-		cost:{'Archaic building materials':25000,'cut stone':500,'hard metal ingot':200,},
+		cost:{'Archaic building materials':25000,'cut stone':500,'hard metal ingot':200},
 		//require:{'worker':3,'metal tools':3},
 		use:{'land':1},
 		effects:[
