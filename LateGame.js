@@ -128,8 +128,7 @@ func:function()
 		desc:'@provides 500 [housing]<>A towering edifice of humanity .',
 		icon:[3,0,'LateGameSheet'],
 		cost:{'archaic building materials':25000,'hard metal ingot':500 },
-		use:{'land':1},
-		//require:{'worker':3,'metal tools':3},
+				//require:{'worker':3,'metal tools':3},
 		effects:[
 			{type:'provide',what:{'housing':500}},
 			{type:'waste',chance:0.01/1000}
