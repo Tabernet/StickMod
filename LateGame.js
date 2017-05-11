@@ -127,8 +127,9 @@ func:function()
 		name:'Orbital Housing Complex',
 		desc:'@provides 500 [housing]<> A pile of rocks reaching to the heavens leads to living high.',
 		icon:[3,0,'LateGameSheet'],
-		cost:{'Archaic building materials':25000,'cut stone':500,'hard metal ingot':200,'sand':50},
+		cost:{'Archaic building materials':25000,'cut stone':500,'hard metal ingot':200,},
 		//require:{'worker':3,'metal tools':3},
+		use:{'land':1},
 		effects:[
 			{type:'provide',what:{'housing':500}},
 			{type:'waste',chance:0.01/1000}
