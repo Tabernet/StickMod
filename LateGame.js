@@ -126,8 +126,8 @@ func:function()
 	new G.Unit({
 		name:'Orbital Complex',
 		desc:'@provides 500 [housing]<>A towering edifice of humanity .',
-		icon:[0,3,'LateGameSheet'],
-		cost:{'basic building materials':250,'cut stone':500 },
+		icon:[3,0,'LateGameSheet'],
+		cost:{'archaic building materials':25000,'hard metal ingot':500 },
 		use:{'land':1},
 		//require:{'worker':3,'metal tools':3},
 		effects:[
