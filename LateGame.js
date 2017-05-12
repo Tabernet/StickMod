@@ -97,6 +97,7 @@ func:function()
 		category:'production',
 		req:{'Composting':true},
 		});
+	
 		//Farm - create compost from other wastes
 		new G.Unit({
 		name:'Farm',
@@ -105,7 +106,7 @@ func:function()
 		cost:{'archaic building materials':5000,'compost':50,'mud':50},
 		use:{'land':1},
 		effects:[
-			{type:'gather',what:{'fruit':2000},use:{'worker':100,'stone tools':100},into:{'compost':1},every:5}
+			{type:'gather',what:{'fruit':2000},use:{'worker':100,'stone tools':100},every:5}
 		],
 		category:'production',
 		req:{'Agriculture':true},
