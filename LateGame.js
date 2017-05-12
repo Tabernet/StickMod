@@ -55,7 +55,14 @@ func:function()
 		cost:{'insight':15},
 		req:{'stockpiling':true},
 		});
-		
+					//Tech for Farms
+		new G.Tech({
+		name:'Agriculture',
+		desc:'A new way to feed families',
+		icon:[5,0,'LateGameSheet'],
+		cost:{'insight':20},
+		req:{'plant lore':true},
+		});
 		
 		//Tech for Cremation
 		new G.Tech({
@@ -90,6 +97,20 @@ func:function()
 		category:'production',
 		req:{'Composting':true},
 		});
+		//Farm - create compost from other wastes
+		new G.Unit({
+		name:'Farm',
+		desc:'@Turns [compost] and labor in [food],
+		icon:[5,0,'LateGameSheet'],
+		cost:{'archaic building materials':5000,'compost':50,'mud':50},
+		use:{'land':1},
+		effects:[
+			{type:'gather',what:{'fruit':2000},use:{'worker':100,'stone tools':100},into:{'compost':1},every:5}
+		],
+		category:'production',
+		req:{'Agriculture':true},
+		});
+		
 		//Water Purification Unit - To get rid of surplus Muddy Water
 		new G.Unit({
 		name:'Water Purification System',
