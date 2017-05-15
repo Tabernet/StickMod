@@ -104,9 +104,10 @@ func:function()
 		desc:'@Turns [compost] and labor in [food],
 		icon:[5,0,'LateGameSheet'],
 		cost:{'archaic building materials':5000,'compost':50,'mud':50},
-		use:{'land':1},
+		use:{'land':1,'worker':100},
+		staff:{'stone tools':100}
 		effects:[
-			{type:'gather',what:{'fruit':2000},use:{'worker':100,'stone tools':100},every:5}
+			{type:'gather',what:{'fruit':2000},amount:500,max:2000}
 		],
 		category:'production',
 		req:{'Agriculture':true},
