@@ -99,19 +99,7 @@ func:function()
 		});
 	
 		//Farm - create compost from other wastes
-		new G.Unit({
-		name:'Farm',
-		desc:'@Turns [compost] and labor in [food],
-		icon:[5,0,'LateGameSheet'],
-		cost:{'archaic building materials':5000,'compost':50,'mud':50},
-		use:{'land':1,'worker':100},
-		staff:{'stone tools':100}
-		effects:[
-			{type:'gather',what:{'fruit':2000},amount:500,max:2000}
-		],
-		category:'production',
-		req:{'Agriculture':true},
-		});
+
 		
 		//Water Purification Unit - To get rid of surplus Muddy Water
 		new G.Unit({
