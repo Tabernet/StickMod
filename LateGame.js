@@ -59,7 +59,7 @@ func:function()
 		new G.Tech({
 		name:'Agriculture',
 		desc:'A new way to feed families',
-		icon:[5,0,'LateGameSheet'],
+		icon:[4,0,'LateGameSheet'],
 		cost:{'insight':20},
 		req:{'plant lore':true},
 		});
