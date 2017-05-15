@@ -115,7 +115,22 @@ func:function()
 		req:{'water purification':true},
 		
 	});
-
+		//Farm - create food from compost
+		new G.Unit({
+		name:'Farm',
+		desc:'@produces fresh Food, up to 20 per day<>The [well] is a steady source of drinkable water.',
+		icon:[4,0,'LateGameSheet'],
+		cost:{'compost':500,'archaic building materials':1000},
+		use:{'land':1},
+		require:{'worker':100,'stone tools':100},
+		upkeep:{'compost':0.2},
+		effects:[
+			{type:'gather',what:{'fruit':2000}},
+		],
+		category:'production',
+		req:{'Agriculture:true},
+		
+	});
 	
 		//Appartment - Improved Housing Unit
 	new G.Unit({
