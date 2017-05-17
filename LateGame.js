@@ -137,7 +137,7 @@ func:function()
 		name:'Orbital Complex',
 		desc:'@provides 500 [housing]<>Pilling rocks high enough to enable greatness .',
 		icon:[3,0,'LateGameSheet'],
-		cost:{'archaic building materials':25000,'hard metal ingot':500 },
+		cost:{'archaic building materials':25000,'strong metal ingot':500 },
 				//require:{'worker':3,'metal tools':3},
 		effects:[
 			{type:'provide',what:{'housing':500}},
@@ -147,7 +147,22 @@ func:function()
 		category:'housing',
 	});
 		//Farm - Improved Burial Unit
-	
+			name:'Farm',
+		desc:'@produces fresh Food, up to 20 per day<>The [well] is a steady source of drinkable water.',//TODO : desc
+		icon:[4,0,'LateGameSheet'],
+		cost:{'compost':500,'archaic building materials':1000},
+		use:{'land':1},
+			modes:{
+			'off':G.MODE_OFF,
+			'fruit':{name:'Fruit',icon:[4,7],desc:'Produce many [fruit] from out of [compost].',use:{'worker':100,'stone tools':100},req:{}},
+		},
+		effects:[
+			{type:'convert',from:{'compost':1},into:{'fruit':2000},every:5,mode:'fruit'},
+		],
+		gizmos:true,
+		req:{'Agriculture':true},
+		category:'production',
+			});
 	
 		//Mass Grave - Improved Burial Unit
 	new G.Unit({
