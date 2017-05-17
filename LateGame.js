@@ -147,7 +147,8 @@ func:function()
 		category:'housing',
 	});
 		//Farm - Improved Burial Unit
-			name:'Farm',
+	new G.Unit({	
+		name:'Farm',
 		desc:'@produces fresh Food, up to 20 per day<>The [well] is a steady source of drinkable water.',//TODO : desc
 		icon:[4,0,'LateGameSheet'],
 		cost:{'compost':500,'archaic building materials':1000},
